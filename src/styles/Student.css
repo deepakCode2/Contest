@@ -1,0 +1,352 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* General Styles */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #fff;
+}
+
+.student-dashboard {
+  padding: 24px;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.dashboard-header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #111827;
+  display: flex;
+  align-items: center;
+}
+
+.dashboard-header h1 i {
+  margin-right: 10px;
+}
+
+/* Avatar */
+.avatar {
+  width: 40px;
+  height: 40px;
+  background-color: #f3f4f6;
+  color: #374151;
+  border-radius: 9999px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  overflow: hidden;
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Tabs */
+.stu-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.tab-buttons {
+  display: flex;
+  background-color: #f3f4f6;
+  border-radius: 8px;
+  overflow: hidden;
+  max-width: 600px;
+}
+
+.tab-buttons button {
+  flex: 1;
+  padding: 10px 0;
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  font-weight: 500;
+  color: #6b7280;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.tab-buttons button.active {
+  background-color: #fff;
+  color: #111827;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+  font-weight: 600;
+}
+
+/* Card Grid */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 0 1px #e5e7eb;
+  transition: box-shadow 0.2s ease;
+}
+
+.card h2 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #111827;
+}
+
+.card-detail button {
+  width: 100%;
+  background-color: #111827;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.card-detail button:hover {
+  background-color: #1f2937;
+}
+
+/* Performance & Profile Panels */
+.performance,
+.profile {
+  border-radius: 16px;
+  padding: 32px;
+  max-width: 96%;
+  background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(229, 231, 235, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.performance:hover,
+.profile:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+}
+
+.performance h2,
+.profile h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #111827;
+}
+
+.profile p {
+  margin-bottom: 8px;
+  color: #374151;
+}
+
+.profile-pic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 2rem auto 1rem;
+  display: block;
+  border: 2px solid #111827;
+  background-color: #f3f4f6;
+}
+
+/* Buttons */
+.logout-btn,
+.change-pic-btn,
+.upload-label {
+  background-color: #242425;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.logout-btn:hover {
+  background-color: #ef4444;
+}
+
+.change-pic-btn:hover,
+.upload-label:hover {
+  background-color: #2563eb;
+}
+
+.upload-label {
+  margin-bottom: 1rem;
+}
+
+/* Grouping buttons */
+.profile-btn-group {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 1rem;
+  gap: 30px;
+}
+
+/* Educator Name Input */
+.educator-name {
+  flex: 1;
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.75rem;
+  background-color: #f0f9ff;
+  color: #1e293b;
+  transition: border-color 0.3s ease;
+}
+
+.educator-name::placeholder {
+  color: #64748b;
+}
+
+.educator-name:focus {
+  border-color: #3b82f6;
+  outline: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+/* Contest Details Modal */
+.contest-details {
+  padding: 20px;
+  background-color: white;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  border: 2px solid #ccc;
+  width: 80%;
+  max-width: 500px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  display: none;
+}
+
+.contest-details.active {
+  display: block;
+}
+
+.contest-details button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.contest-details button:hover {
+  background-color: #d32f2f;
+}
+
+/* Profile Card Overlay */
+.profile-card-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 45%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Button Group Styling */
+.profile-btn-group {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.change-pic-btn, .logout-btn {
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.change-pic-btn {
+  background-color: #000000;
+  color: white;
+}
+
+.logout-btn {
+  background-color: #000000;
+  color: white;
+}
+
+/* Hover Styling */
+.change-pic-btn:hover {
+  background-color: #2b6cb0; /* Light blue shade */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+.logout-btn:hover {
+  background-color: #e53935; /* Red shade */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+.close-profile-btn {
+  background-color: #000000;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.close-profile-btn:hover {
+  background-color: #b035e5; /* Red shade */
+  transform: scale(1.05); /* Slight zoom effect */
+}
